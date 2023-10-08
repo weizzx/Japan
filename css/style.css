@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Ysabeau:ital,wght@0,1;0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,1;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+
+:root {
+    --bg-clr: #0d0d0d;
+    --gradient: #0d0d0dbf;
+    --primary-clr: #C62034;
+    --card-bg: #121212;
+    --card-shadow: 10px 10px 20px 0px hsl(0, 0%, 2%);
+    --header-section-shadow: 0px 20px 15px hsl(0, 0%, 2%),  0px -20px 15px hsl(0, 0%, 2%);
+    --header-height: 50vh;
+    --main-header-height: 80vh;
+    --section-padding: 100px 0px;
+    --txt-sm: 400 clamp(1rem, 20% + 10vw, 1.5rem) 'Ysabeau', sans-serif;
+    --txt-md: 600 clamp(1.5rem, 40% + 10vw, 3rem) 'Ysabeau', sans-serif;
+    --txt-lg: 1000 clamp(4em, 80% + 10vw, 10em) 'Ysabeau', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 9px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-clr);
+}
+::-webkit-scrollbar-track {
+    background-color: var(--bg-clr);
+}
+
+*::selection {
+    background-color: var(--primary-clr);
+    color: white !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container-sm {
+    width: 1000px !important;
+}
+
+.card {
+    background: var(--card-bg) !important;
+    color: white !important;
+    box-shadow: var(--card-shadow);
+    padding: 20px;
+    /* border-bottom: solid 5px #C62034 !important; */
+}
+
+.card-body {
+    padding: 20px !important;
+}
+
+.card-text {
+    font: var(--txt-sm) !important;
+}
+
+.card-title {
+    font: var(--txt-md);
+    text-decoration:underline;
+    text-decoration-color: var(--primary-clr);
+    letter-spacing: 5px;
+    line-height: 80px;
+}
+
+.list-group-item {
+    color: white !important;
+    background: var(--card-bg) !important;
+    border: none !important;
+}
+
+th, td {
+    color: white !important;
+}
+
+th {
+    font: var(--txt-sm) !important;
+}
+    
+td {
+    font: var(--txt-sm) !important;
+}
+
+td img {
+    height: 112.5px;
+}
+
+header {
+    width: 100%;
+    height: var(--main-header-height);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 1%, rgba(0, 0, 0, 0.6) 99%),url(../img/header-bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0px 15px 15px hsl(0, 0%, 2%);
+}
+
+header h1 {
+    font: var(--txt-lg);
+}
+
+nav {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+nav .container-sm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav img {
+    width: clamp(60px, 20% + 10vw, 80px);
+    transition: 0.3s;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 25px;
+    transition: .3s;
+}
+
+nav ul li a {
+position: relative;
+  display: block;
+  text-decoration: none;
+  font: 600 clamp(1.5rem, 40% + 10vw, 2rem) 'Ysabeau', sans-serif;
+  color: #ecf0f1;
+  padding: 4px 0;
+  transition: 0.5s;
+}
+
+nav ul li a:hover {
+    color: white;
+}
+
+nav ul li a::after {
+position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  top: 100%;
+  left: 0;
+  background: var(--primary-clr);
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+nav.sticky {
+    height: 75px;
+    background-color: var(--bg-clr);
+    backdrop-filter: blur(2px);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+}
+
+nav.sticky .container-sm {
+    height: 75px;
+    transition: .3s;
+}
+
+nav.sticky img{
+    width: clamp(40px, 3vw, 60px);
+    transition: 0.3s;
+}
+
+nav.sticky ul li {
+    padding: 0px 30px;
+    transition: .3s;
+}
+
+nav.sticky ul li a {
+    font: 600 clamp(1rem, 40% + 10vw, 1.5rem) 'Ysabeau', sans-serif;;
+    transition: 0.3s;
+}
+
+
+/* HOME - SECTION */
+.home {
+    background: var(--bg-clr);
+    padding: var(--section-padding);
+}
+
+.home .grid {  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 2em 2em;
+    grid-auto-flow: row;
+    grid: ' card1 card1 '
+          ' card2 card3 ';
+}
+
+.home .card1 { grid-area: card1 }
+.home .card2 { grid-area: card2 }
+.home .card3 { grid-area: card3 }
+
+.home .img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home .vlajka {
+    width: 220px;
+}
+
+.home .znak {
+    width: 150px;
+}
+
+/* CARS - SECTION */
+.cars-header {
+    width: 100%;
+    height: var(--header-height);
+    background: linear-gradient( rgba(0, 0, 0, 0.8) 1%, rgba(0, 0, 0, 0.6) 99%),url(../img/cars-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    box-shadow: var(--header-section-shadow);
+}
+
+.cars-header h1 {
+    font: var(--txt-lg);
+}
+
+.cars {
+    background: var(--bg-clr);
+    padding: var(--section-padding);
+}
+
+.cars .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2em;
+}
+
+
+/* SUSHI - SECTION */
+.sushi-header {
+    width: 100%;
+    height: var(--header-height);
+    background: linear-gradient( rgba(0, 0, 0, 0.8) 1%, rgba(0, 0, 0, 0.6) 99%),url(../img/sushi-bg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    box-shadow: var(--header-section-shadow);
+}
+
+.sushi-header h1 {
+    font: var(--txt-lg);
+}
+
+.sushi {
+    background: var(--bg-clr);
+    padding: var(--section-padding);
+}
+  
+.sushi .bottom {  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2em 2em;
+    grid-auto-flow: row;
+    grid-area: 1 / 1 / -1 / -1;
+}
+
+.sushi .card4 { grid-area: 2 / 1 / 3 / 2; }
+.sushi .card3 { grid-area: 2 / 2 / 3 / 3; }
+.sushi .card2 { grid-area: 1 / 2 / 2 / 3; }
+.sushi .card1 { grid-area: 1 / 1 / 2 / 2; }
+
+.list-group-item {
+    font: 400 clamp(1.5rem, 20% + 10vw, 2rem) 'Ysabeau', sans-serif;
+}
+
+/* ANIME - SECTION */
+.anime-header {
+    width: 100%;
+    height: var(--header-height);
+    background: linear-gradient( rgba(0, 0, 0, 0.8) 1%, rgba(0, 0, 0, 0.6) 99%),url(../img/anime-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    box-shadow: var(--header-section-shadow);
+}
+
+.anime-header h1 {
+    font: var(--txt-lg);
+}
+
+.anime {
+    background: var(--bg-clr);
+    padding: var(--section-padding);
+}
+
+/* FOOTER - SECTION */
+footer {
+    width: 100%;
+    height: 40vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.6) 1%, rgba(0, 0, 0, 0.6) 99%),url(../img/footer-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0px -20px 15px hsl(0, 0%, 2%);
+}
+
+footer h5 {
+    font: var(--txt-sm) !important;
+    padding-top: 150px !important;
+}
+
+@media screen and (min-width: 761px) and (max-width: 1000px) {
+
+:root {
+    --header-height: 25vh;
+    --main-header-height: 50vh;
+}
+
+.footer-header {
+    height: 20vh;
+}
+
+/* CARS - SECTION */
+.cars .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+/* SUSHI - SECTION */
+.sushi-header {
+    width: 100%;
+    height: var(--header-height);
+    background: linear-gradient( rgba(0, 0, 0, 0.8) 1%, rgba(0, 0, 0, 0.6) 99%),url(../img/sushi-bg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    box-shadow: var(--header-section-shadow);
+}
+
+.sushi-header h1 {
+    font: var(--txt-lg);
+}
+
+.sushi {
+    background: var(--bg-clr);
+    padding: var(--section-padding);
+}
+
+.sushi .top { grid-area: 1 / 1 / 2 / 3; }
+
+.sushi .bottom {  
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 2em 2em;
+    grid-auto-flow: column;
+    grid-area: 2 / 1 / 4 / 3;
+}
+
+.sushi .card1 { grid-area: 1 / 1 / 2 / 2; }
+.sushi .card2 { grid-area: 2 / 1 / 3 / 2; }
+.sushi .card3 { grid-area: 3 / 1 / 4 / 2; }
+.sushi .card4 { grid-area: 4 / 1 / 5 / 2; }
+}
