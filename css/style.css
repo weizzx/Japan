@@ -9,7 +9,7 @@
     --header-section-shadow: 0px 20px 15px hsl(0, 0%, 2%),  0px -20px 15px hsl(0, 0%, 2%);
     --header-height: 50vh;
     --main-header-height: 80vh;
-    --section-padding: 100px 0px;
+    --section-padding: 10rem 0px;
     --txt-sm: 400 clamp(1rem, 20% + 10vw, 1.5rem) 'Ysabeau', sans-serif;
     --txt-md: 600 clamp(1.5rem, 40% + 10vw, 3rem) 'Ysabeau', sans-serif;
     --txt-lg: 1000 clamp(4em, 80% + 10vw, 10em) 'Ysabeau', sans-serif;
