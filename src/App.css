@@ -1,0 +1,22 @@
+.wrapper {
+    width: 1200px !important; 
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c52033;
+}
+
+::selection {
+    background-color: #c52033;
+}
+  
+  
+.fixed {
+    position: fixed;
+    top: 0;
+    transition: 1s;
+}
